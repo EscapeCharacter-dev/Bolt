@@ -1,1 +1,1 @@
-Python files must be used in the pypy-runtime folder.
+How to run python files from pypy-runtime\pypy3
