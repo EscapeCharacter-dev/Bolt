@@ -46,8 +46,22 @@ namespace Bolt.compiler
 
                 var length = _position - start;
                 var text = _text.Substring(start, length);
+                if (sbyte.TryParse(text, out sbyte sbresult))
+                    return new SyntaxToken(SyntaxKind.SByte, _position, text, sbresult);
+                if (byte.TryParse(text, out byte bresult))
+                    return new SyntaxToken(SyntaxKind.Byte, _position, text, bresult);
+                if (short.TryParse(text, out short sresult))
+                    return new SyntaxToken(SyntaxKind.Short, _position, text, sresult);
+                if (ushort.TryParse(text, out ushort usresult))
+                    return new SyntaxToken(SyntaxKind.UShort, _position, text, usresult);
                 if (int.TryParse(text, out int iresult))
                     return new SyntaxToken(SyntaxKind.Integer, _position, text, iresult);
+                if (uint.TryParse(text, out uint uiresult))
+                    return new SyntaxToken(SyntaxKind.UInteger, _position, text, uiresult);
+                if (long.TryParse(text, out long lresult))
+                    return new SyntaxToken(SyntaxKind.Long, _position, text, lresult);
+                if (ulong.TryParse(text, out ulong ulresult))
+                    return new SyntaxToken(SyntaxKind.ULong, _position, text, ulresult);
             }
 
             if (char.IsLetter(Current))
