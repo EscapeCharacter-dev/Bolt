@@ -1,4 +1,6 @@
-﻿using IronPython.Hosting;
+﻿using Bolt.compiler;
+using Bolt.compiler.syntax;
+using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using Microsoft.Scripting.Hosting.Shell;
 using System;
@@ -30,6 +32,13 @@ namespace Bolt
                         Console.WriteLine("Python: " + e.Message + "; (Line inserted) = " + pinput);
                         Console.ForegroundColor = old;
                     }
+                }
+                else
+                {
+                    Lexer lexer = new Lexer(input);
+                    SyntaxToken token = lexer.Lex();
+                    Console.WriteLine(token.Kind);
+                    Console.WriteLine(token.Value);
                 }
             }
         }
