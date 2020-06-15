@@ -1,0 +1,25 @@
+//This is a comment.
+/*This is also a comment.
+It can be multiline.*/
+
+def var int score = 600; //Defines a integer "score" with value 600
+
+def func nbr calculateScore() //A function is not the same as a variable.
+{
+	def var nbr subscore = math(score - 400); /*Defines a number with a value of 600 - 400 (200).*/
+	/*Numbers are the global numeral type: The compiler will detect it and transform it into a
+	the proper numeral type.*/
+	return math(score + subscore); //Returns the value of 600 + 200.
+	//Or do: . math(score + subscore);
+}
+
+def main(def varray string args) //Arrays are apart from variables and functions. Main is also unique.
+{
+	def var nbr tScore = calculateScore(); //Stores 600 + 200 into a value called tScore.
+	println(represent(tScore)); //Prints a string ("800") created from the value of tScore (800).
+	__pythonc__:print "Hello, I call python from here!"
+	//NOTE: __pythonc__ is only usable in interpretation.
+	__pythonl__:myPythonScript.py
+	//NOTE: __pythonl__ is also only usable in interpretation.
+	./*Ends the execution (Not needed here). Can also be used as break. ',' can be used as 		continue.*/
+}
