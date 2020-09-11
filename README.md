@@ -8,5 +8,5 @@ The Bolt Programming Language is a compiled C-style programming language made fo
 ... Maybe. Bolt is made as a modern programming language using modern concepts.
 
 # Can I use my C code in Bolt?
-Yes, but it can be tricky for beginners. For example, printf:\n
+Yes, but it can be tricky for beginners. For example, printf:<br/>
 `extern int printf(format, ...) :: (string, enumerable);`
